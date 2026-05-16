@@ -1,47 +1,74 @@
-// Archivo con errores intencionales para la actividad "Caza errores".
+function irReservas(){
 
-// ERROR 12: falta cerrar la cadena de texto. Esto rompe todo el JavaScript.
-const nombreBar = "Origen Bar de Autor;
+    const reservas = document.getElementById("reservas");
 
-const year = document.getElementById("year");
-year.textContent = new Date().getFullYear();
-
-function reservarMesa() {
-  const reservas = document.getElementById("reservas");
-  reservas.scrollIntoView({ behavior: "smooth" });
+    reservas.scrollIntoView({
+        behavior:"smooth"
+    });
 }
 
-const form = document.getElementById("reservationForm");
-const mensaje = document.getElementById("mensajeReserva");
+const formulario = document.getElementById("formulario");
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+const mensaje = document.getElementById("mensaje");
 
-  const nombre = document.getElementById("nombre").value.trim();
-  const telefono = document.getElementById("telefono").value.trim();
-  const personas = Number(document.getElementById("personas").value);
-  const fecha = document.getElementById("fecha").value;
+formulario.addEventListener("submit", function(e){
 
-  if (nombre.length < 3) {
-    mensaje.textContent = "Escribe un nombre válido.";
-    return;
-  }
+    e.preventDefault();
 
-  if (!/^3\d{9}$/.test(telefono)) {
-    mensaje.textContent = "El teléfono debe iniciar por 3 y tener 10 dígitos.";
-    return;
-  }
+    const nombre = document.getElementById("nombre").value.trim();
 
-  if (personas < 1 || personas > 8) {
-    mensaje.textContent = "Solo aceptamos reservas entre 1 y 8 personas.";
-    return;
-  }
+    const telefono = document.getElementById("telefono").value.trim();
 
-  if (!fecha) {
-    mensaje.textContent = "Selecciona una fecha para la reserva.";
-    return;
-  }
+    const personas = document.getElementById("personas").value;
 
-  mensaje.textContent = `Reserva registrada para ${nombre}. Te contactaremos al ${telefono}.`;
-  form.reset();
+    const fecha = document.getElementById("fecha").value;
+
+    if(nombre.length < 3){
+
+        mensaje.innerHTML = "⚠️ Ingresa un nombre válido";
+
+        return;
+    }
+
+    if(!/^3\d{9}$/.test(telefono)){
+
+        mensaje.innerHTML = "⚠️ El teléfono debe tener 10 dígitos";
+
+        return;
+    }
+
+    if(personas < 1){
+
+        mensaje.innerHTML = "⚠️ Debes ingresar mínimo 1 persona";
+
+        return;
+    }
+
+    if(fecha === ""){
+
+        mensaje.innerHTML = "⚠️ Selecciona una fecha";
+
+        return;
+    }
+
+    mensaje.innerHTML =
+    `✨ Reserva confirmada para <strong>${nombre}</strong>.`;
+
+    formulario.reset();
+});
+
+const modoBtn = document.getElementById("modoBtn");
+
+modoBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("modo-activo");
+
+    if(document.body.classList.contains("modo-activo")){
+
+        modoBtn.innerHTML = "Modo Activado ✨";
+
+    }else{
+
+        modoBtn.innerHTML = "Activar Modo Night";
+    }
 });

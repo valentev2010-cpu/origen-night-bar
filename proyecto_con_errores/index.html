@@ -1,120 +1,269 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origen Bar de Autor | Proyecto con errores</title>
-  <!-- ERROR 01: la ruta real del archivo es css/styles.css -->
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Origen Night Bar</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="site-header">
-    <nav class="navbar" aria-label="Navegación principal">
-      <!-- ERROR 02: la carpeta correcta es assets/img/ -->
-      <img class="logo" src="assets/image/logo-origen.svg" alt="Logo Origen Bar de Autor">
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <!-- ERROR 03: no existe una sección con id menu; la sección se llama carta -->
-        <li><a href="#menu">Carta</a></li>
-        <li><a href="#experiencia">Experiencia</a></li>
-        <li><a href="#reservas">Reservas</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="inicio" class="hero">
-      <img class="hero-bg" src="assets/img/hero-bar.svg" alt="Interior ilustrado de un bar elegante">
-      <!-- ERROR 04: la clase correcta para el CSS es hero-content -->
-      <div class="hero-contnet">
-        <span class="eyebrow">Medellín · Speakeasy moderno</span>
-        <h1>Origen Bar de Autor</h1>
-        <p>Cocteles con ingredientes locales, tapas creativas y una atmósfera íntima para conversaciones memorables.</p>
-        <!-- ERROR 05: la función correcta en JS se llama reservarMesa -->
-        <button class="btn primary" onclick="reservaMesa()">Reservar una mesa</button>
-        <a class="btn ghost" href="#carta">Ver carta</a>
-      </div>
+    <div class="particles"></div>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            ORIGEN
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#cocteles">Cócteles</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#reservas">Reservas</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <img
+            src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1600&auto=format&fit=crop"
+            class="hero-img"
+            alt="Bar elegante">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <span>BAR · MEDELLÍN · EXPERIENCIA PREMIUM</span>
+
+            <h1>
+                Vive la noche
+                <br>
+                diferente
+            </h1>
+
+            <p>
+                Cócteles exclusivos, luces neón, música elegante y una experiencia visual moderna.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="btn primary" onclick="irReservas()">
+                    Reservar Mesa
+                </button>
+
+                <a href="#cocteles" class="btn secondary">
+                    Ver Carta
+                </a>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section id="carta" class="section menu-section">
-      <div class="section-heading">
-        <span class="eyebrow">Carta sugerida</span>
-        <h2>Sabores de la noche</h2>
-        <p>Productos ficticios creados para la actividad académica.</p>
-      </div>
-      <div class="menu-grid">
-        <article class="menu-card featured">
-          <img src="assets/img/coctel-aurora.svg" alt="Cóctel Aurora de Café">
-          <div>
-            <h3>Aurora de Café</h3>
-            <p>Cold brew, naranja ahumada, miel de panela y espuma especiada.</p>
-            <strong>$28.000</strong>
-          </div>
-        </article>
-        <article class="menu-card">
-          <img src="assets/img/tabla-tapas.svg" alt="Tabla de tapas Andina">
-          <div>
-            <h3>Tabla Andina</h3>
-            <p>Quesos artesanales, arepitas crocantes, tomates confitados y dip de cilantro.</p>
-            <strong>$42.000</strong>
-          </div>
-        </article>
-        <article class="menu-card">
-          <img src="assets/img/noche-jazz.svg" alt="Bebida sin alcohol Bruma Tropical">
-          <div>
-            <h3>Bruma Tropical</h3>
-            <p>Lulo, hierbabuena, soda artesanal y almíbar de jengibre.</p>
-            <strong>$18.000</strong>
-          </div>
-        </article>
-      </div>
+    <!-- CÓCTELES -->
+
+    <section class="cards-section" id="cocteles">
+
+        <div class="title">
+
+            <span>NUESTRA CARTA</span>
+
+            <h2>Cócteles Premium</h2>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
+                    alt="Cóctel">
+
+                <div class="card-content">
+
+                    <h3>Aurora Purple</h3>
+
+                    <p>
+                        Vodka premium, frutos rojos y espuma artesanal.
+                    </p>
+
+                    <strong>$28.000</strong>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1541544181051-e46607d2d8c6?q=80&w=1200&auto=format&fit=crop"
+                    alt="Tabla gourmet">
+
+                <div class="card-content">
+
+                    <h3>Midnight Taste</h3>
+
+                    <p>
+                        Tabla gourmet con quesos y carnes especiales.
+                    </p>
+
+                    <strong>$42.000</strong>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200&auto=format&fit=crop"
+                    alt="Bebida tropical">
+
+                <div class="card-content">
+
+                    <h3>Neon Dreams</h3>
+
+                    <p>
+                        Bebida tropical con cítricos y menta fresca.
+                    </p>
+
+                    <strong>$19.000</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section id="experiencia" class="section experience">
-      <div>
-        <span class="eyebrow">Experiencia</span>
-        <h2>Un bar diseñado como proyecto web profesional</h2>
-        <p>Este sitio simula una landing page real para un bar. El estudiante debe diagnosticar errores de estructura, rutas, estilos, responsive design e interactividad.</p>
-      </div>
-      <div class="stats">
-        <div><strong>12</strong><span>cocteles de autor</span></div>
-        <div><strong>3</strong><span>ambientes</span></div>
-        <div><strong>Live</strong><span>jazz viernes</span></div>
-      </div>
+    <!-- EXPERIENCIA -->
+
+    <section class="experience" id="experiencia">
+
+        <div class="experience-text">
+
+            <span>EXPERIENCIA</span>
+
+            <h2>
+                Un sitio moderno
+                con estilo premium
+            </h2>
+
+            <p>
+                Este proyecto combina diseño futurista, efectos visuales, animaciones y una experiencia elegante.
+            </p>
+
+        </div>
+
+        <div class="experience-stats">
+
+            <div class="stat">
+                <h3>12+</h3>
+                <p>Cócteles premium</p>
+            </div>
+
+            <div class="stat">
+                <h3>VIP</h3>
+                <p>Zonas exclusivas</p>
+            </div>
+
+            <div class="stat">
+                <h3>Live</h3>
+                <p>DJ Nights</p>
+            </div>
+
+        </div>
+
     </section>
 
-    <section id="reservas" class="section booking">
-      <div class="section-heading">
-        <span class="eyebrow">Reservas</span>
-        <h2>Agenda tu visita</h2>
-        <p>El formulario debe validar nombre, teléfono y número de personas.</p>
-      </div>
-      <!-- ERROR 06: el JS busca reservationForm -->
-      <form id="reservationFormm" class="booking-form">
-        <label>Nombre completo
-          <input id="nombre" type="text" placeholder="Ej: Mariana López" required>
-        </label>
-        <label>Teléfono
-          <!-- ERROR 07: el JS busca telefono -->
-          <input id="phone" type="tel" placeholder="3001234567" required>
-        </label>
-        <label>Personas
-          <input id="personas" type="number" min="1" max="8" value="2" required>
-        </label>
-        <label>Fecha
-          <input id="fecha" type="date" required>
-        </label>
-        <button class="btn primary" type="submit">Confirmar reserva</button>
-        <p id="mensajeReserva" class="form-message" role="status"></p>
-      </form>
+    <!-- NUEVA FUNCIONALIDAD -->
+
+    <section class="music-player">
+
+        <div class="title">
+
+            <span>AMBIENTE</span>
+
+            <h2>Modo Night</h2>
+
+        </div>
+
+        <div class="music-box">
+
+            <p>
+                Activa el modo night para cambiar automáticamente el ambiente visual del sitio.
+            </p>
+
+            <button class="btn primary" id="modoBtn">
+                Activar Modo Night
+            </button>
+
+        </div>
+
     </section>
-  </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> Origen Bar de Autor. Proyecto académico ficticio.</p>
-  </footer>
+    <!-- RESERVAS -->
 
-  <!-- ERROR 08: la ruta real es js/app.js -->
-  <script src="js/main.js"></script>
+    <section class="reservas" id="reservas">
+
+        <div class="title">
+
+            <span>RESERVAS</span>
+
+            <h2>Reserva tu mesa</h2>
+
+        </div>
+
+        <form id="formulario">
+
+            <input type="text" id="nombre" placeholder="Nombre completo">
+
+            <input type="tel" id="telefono" placeholder="Teléfono">
+
+            <input type="number" id="personas" placeholder="Número de personas">
+
+            <input type="date" id="fecha">
+
+            <button class="btn primary" type="submit">
+                Confirmar Reserva
+            </button>
+
+            <p id="mensaje"></p>
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Origen Night Bar · Proyecto académico
+        </p>
+
+    </footer>
+
+    <script src="js/app.js"></script>
+
 </body>
+
 </html>
